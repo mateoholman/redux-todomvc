@@ -3,12 +3,15 @@ module.exports = {
     './src/index.jsx'
   ],
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'babel'
-    }]
-  },
+  loaders: [{
+    test: /\.jsx?$/,
+    exclude: /node_modules/,
+    loader: 'react-hot!babel'
+  }, {
+    test: /\.css$/,
+    loader: 'style!css' // We add the css loader
+  }]
+},
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
